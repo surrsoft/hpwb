@@ -2,15 +2,12 @@
 
 /* jshint esversion: 6 */
 
-module.exports = {
+/*
+DESCRIPTION : for experiments
 
-    fn1 : function () {
-        console.log('fn1');
-    },
+ */
 
-    fn2 : function () {
-        console.log('fn2');
-        this.fn1();
-    }
+const { random_B } = require('./TNumber');
 
-};
+const x = random_B(-5, 4);
+console.log('x ['+x+']');
