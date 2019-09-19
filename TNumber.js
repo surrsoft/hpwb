@@ -36,5 +36,17 @@ module.exports = {
   random_B: function (_iStart, _iEnd) {
     TUtil.argsCountVerifEx(arguments, 2);
     return lodash.random(_iStart, _iEnd);
-  }
+  },
+
+  // /** {in work}
+  //  * Генерирует (3) случайных числе из диапазона чисел (1)(2) (включая (1) и (2)).
+  //  * Если (3) больше чем длина диапазона (1)(2) то генерируется ...
+  //  *
+  //  * @param _iStart
+  //  * @param _iEnd
+  //  * @param _iCount
+  //  */
+  // random_C: function (_iStart, _iEnd, _iCount) {
+  //
+  // }
 };
