@@ -7,6 +7,7 @@ const TObject = require('./TObject');
 const TString = require('./TString');
 const TUtil = require('./TUtil');
 const TypeID = require('./TypeID');
+const TInternet = require('./TInternet');
 
 module.exports = {
   TArray,
@@ -18,4 +19,5 @@ module.exports = {
   TString,
   TUtil,
   TypeID,
+  TInternet,
 };
