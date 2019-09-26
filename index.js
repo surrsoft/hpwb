@@ -1,3 +1,8 @@
+
+"use strict";
+
+/* jshint esversion: 6 */
+
 const TArray = require('./TArray');
 const TFile = require('./TFile');
 const TInfo = require('./TInfo');
