@@ -4,6 +4,7 @@
 
 const lodash = require('lodash');
 const TUtil = require('./TUtil.js');
+const util = require('util');
 
 module.exports = {
 
@@ -48,10 +49,11 @@ module.exports = {
 
     /**
      * Отличает от А только тем что добавляет многоточие в конце если строка (1) была обрезана (т.е. если её длина
-     * больше чем (2))
+     * больше чем (2)). Также отличается тем что преобразует (1) в строку с помощью util.inspect() перед тем как брать
+     * подстроку
      */
     substring_B: function (_st, _iCount) {
-        let s = this.substring(_st, _iCount);
+        let s = this.substring(util.inspect(_st), _iCount);
         if (_st.length > _iCount) {
             s += '...';
         }
