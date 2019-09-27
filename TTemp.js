@@ -1,13 +1,28 @@
 "use strict";
 
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 
 /*
 DESCRIPTION : for experiments
 
  */
 
-const { random_B } = require('./TNumber');
+const { valueGet } = require('./TPromise.js');
 
-const x = random_B(-5, 4);
-console.log('x ['+x+']');
+function fn() {
+    return new Promise((resolve, reject) => {
+        resolve('ok');
+    });
+}
+
+async function fn2() {
+    const p = await fn().catch((err) => {
+        console.log('!!!-!!!-!!! err {9/27/19-1:01 PM}\n', err); //del
+    });
+    const x = valueGet(p);
+    console.log('!!!-!!!-!!! x {9/27/19-12:56 PM}\n', x); //del
+}
+
+fn2();
+
+
