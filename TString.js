@@ -33,7 +33,7 @@ module.exports = {
      * @param _iCount {Number}
      * @returns {string}
      */
-    substringFirst: function (_st, _iCount) {
+    substring: function (_st, _iCount) {
         TUtil.argsCountVerifEx(arguments, 2);
         TUtil.exceptIf(_iCount >= 0, `_iCount ${_iCount}`);
         if (typeof _st !== 'string') {
@@ -46,8 +46,16 @@ module.exports = {
         return _st.substring(0, _iCount);
     },
 
-    substringFirstEllipsis: function (_st, _iCount) {
-
+    /**
+     * Отличает от А только тем что добавляет многоточие в конце если строка (1) была обрезана (т.е. если её длина
+     * больше чем (2))
+     */
+    substring_B: function (_st, _iCount) {
+        let s = this.substring(_st, _iCount);
+        if (_st.length > _iCount) {
+            s += '...';
+        }
+        return s;
     }
 
 };
