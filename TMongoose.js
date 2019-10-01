@@ -17,7 +17,7 @@ module.exports = {
   },
 
   /**
-   * Добаление к схеме (1) метода (3) по имени (2)
+   * Добаление к схеме (1) метода (3) по имени (2) _
    *
    * @param _ojSchema {Scnema} (1) --
    * @param _stMethodName {String} (2) --
