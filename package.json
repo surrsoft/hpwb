@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/surrsoft/hpwb#readme",
   "dependencies": {
-    "lodash": "latest"
+    "lodash": "latest",
+    "mongodb": "^3.3.2"
   }
 }
