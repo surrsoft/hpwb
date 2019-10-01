@@ -23,7 +23,7 @@ module.exports = {
   },
 
   /**
-   * Бросает исключение с текстом (2) если (1) != TRUE
+   * Бросает исключение с текстом (2) если (1) is FALSE
    *
    * @param _b {Boolean} (1) --
    * @param _stText {String} (2) --
