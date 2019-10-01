@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/surrsoft/hpwb/issues"
   },
-  "homepage": "https://github.com/surrsoft/hpwb#readme"
+  "homepage": "https://github.com/surrsoft/hpwb#readme",
+  "dependencies": {
+    "lodash": "latest"
+  }
 }
