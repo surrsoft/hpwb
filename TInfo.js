@@ -9,6 +9,7 @@
 
 const util = require('util');
 const TUtil = require('./TUtil');
+const TString = require('./TString');
 
 //`````````````````````````````````````````````````````````````````````````````````````````````````
 /**
@@ -75,6 +76,22 @@ module.exports = {
     },
 
     /**
+     * Преобразует (2) используя util.inspect(), обрезает получившуюся строку до (4) символов и выводит в консоль
+     * предварив префиксом (1) и суффиксом (2)
+     *
+     * @param _stPrefix {String} (1) --
+     * @param _oj {Object} (2) --
+     * @param _stSuffix {String} (3) --
+     * @param _iTrim {Number} (4) --
+     */
+    infoConsole_C: function (_stPrefix, _oj, _stSuffix, _iTrim) {
+        TUtil.argsCountVerifEx(arguments, 4);
+        const x = this.fnInspect(_oj);
+        const x2 = TString.substring_B(x, _iTrim);
+        this.infoConsole(_stPrefix, x2, _stSuffix);
+    },
+
+    /**
      * Возвращает определение функции которая использовалась как конструктор для создания объекта (1)
      * @param _oj (1) --
      * @returns {string}
@@ -95,7 +112,8 @@ module.exports = {
         }
         //---
         return util.inspect(_oj) + x;
-    }
+    },
+
 
 };
 
