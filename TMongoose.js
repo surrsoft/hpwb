@@ -3,23 +3,23 @@
 /* jshint esversion: 8 */
 
 const mongoose = require('mongoose');
-const { Scnema, Model } = mongoose;
+const { Schema, Model } = mongoose;
 
 module.exports = {
   /**
-   * Создание модели
+   * Create model
    *
    * @param _stName
-   * @param _ojSchema
+   * @param _ojSchema {Schema}
    */
   modelCreate: function (_stName, _ojSchema) {
     return mongoose.model(_stName, _ojSchema);
   },
 
   /**
-   * Добаление к схеме (1) метода (3) по имени (2) _
+   * Adding to scheme (1) method (3) with name (2)
    *
-   * @param _ojSchema {Scnema} (1) --
+   * @param _ojSchema {Schema} (1) --
    * @param _stMethodName {String} (2) --
    * @param _fn {Function} (3) --
    */

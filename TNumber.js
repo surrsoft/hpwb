@@ -1,9 +1,9 @@
 "use strict";
 
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 
 /*
-ОПИСАНИЕ: утилитные функции для работы с числами
+DESCRIPTION: utility functions for work with numbers
 
  */
 

@@ -1,9 +1,9 @@
 "use strict";
 
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 
 /*
-ОПИСАНИЕ: утилитные функции для работы с типом Map
+DESCRIPTION: utility functions for work with type Map
 
  */
 
@@ -11,7 +11,7 @@ const TUtil = require('./TUtil');
 
 module.exports = {
     /**
-     * Получить ключи Map (1) в виде массива
+     * Return keys of Map (1) as array
      *
      * @param _map {Map} (1) --
      * @returns {[]}
@@ -24,7 +24,7 @@ module.exports = {
     },
 
     /**
-     * Отличается от А только тем что преобразует ключи к типу String
+     * Differ from A only that convert keys to type String
      *
      * @param _map {Map} (1) --
      * @returns {String[]}

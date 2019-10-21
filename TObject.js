@@ -1,6 +1,6 @@
 "use strict";
 
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 
 const util = require('util');
 const TUtil = require('./TUtil');
@@ -10,7 +10,7 @@ const TMap = require('./TMap');
 module.exports = {
 
     /**
-     * Если (1) это функция то возвращает _фан-прототип ([fyxu]) этой функции, иначе просто прототип
+     * If (1) is function that return it _fun-prototype ([fyxu]), else just prototype
      *
      * @param _any (1) --
      * @returns {any}
@@ -32,7 +32,8 @@ module.exports = {
     },
 
     /**
-     * Устанавливает для (1) в качестве прототипа сущность (2)
+     * Set for (1) as prototype entity (2)
+     *
      * @param _any (1) --
      * @param _proto (2) --
      */
@@ -43,14 +44,14 @@ module.exports = {
     },
 
     /**
-     * Проходит по объектам из массива объектов (1) и отбирает УНИКАЛЬНЫЕ значения поля (2) этих объектов. Эти значения
-     * пишет в ключи выходного Map, а в значения ключей пишет количество повторений этих значений.
-     * Не отбирает значения у которых "typeof === 'function' || 'object'". Если (3) == TRUE то не отбирает также undefined
-     * значения.
+     * Traverse on objects from object array (1) and selects UNIQUE values of field (2) this objects. This values
+     * write to keys output Map, but to values of keys write count occurrences this values.
+     * Not selects values what have "typeof === 'function' || 'object'". If (3) == TRUE that not selects also undefined
+     * values.
      *
-     * @param _ojs {Array} (1) -- массив объектов
-     * @param _stFieldPath {String} (2) -- [kmkx]; путь к свойству, например 'b.a' или 'b'
-     * @param _bUndefIgnore {Boolean} (3) -- если TRUE то значения 'undefined' не попадают в итоговый Map
+     * @param _ojs {Array} (1) -- array of objects
+     * @param _stFieldPath {String} (2) -- [kmkx]; path to property, example 'b.a' или 'b'
+     * @param _bUndefIgnore {Boolean} (3) -- if TRUE that 'undefined' values not contribute to result selects
      * @returns {Map<any, any>}
      */
     valuesUnicumGet: function (_ojs, _stFieldPath, _bUndefIgnore) {
@@ -73,14 +74,14 @@ module.exports = {
     },
 
     /**
-     * Отличается от А только тем что возвращает массив УНИКАЛЬНЫХ значений (массив строк)
+     * Differ from A only that return array of UNIQUE values (array strings)
      */
     valuesUnicumGet_B: function (_ojs, _stFieldPath, _bUndefIgnore) {
         return TMap.keysGet_B(this.valuesUnicumGet(_ojs, _stFieldPath, _bUndefIgnore));
     },
 
     /**
-     * Возвращает TRUE если объект (1) имеет собственное свойство (2)
+     * Return TRUE if object (1) have own property (2)
      *
      * @param _oj {Object} (1) --
      * @param _stFieldName {String} (2) --
@@ -95,11 +96,11 @@ module.exports = {
     },
 
     /**
-     * Ищет в объекте (1) поле (2). Если находит, и значение этого поля не функция и не объект (т.е. и не null),
-     * то возвращает это значение, иначе возвращает undefined
+     * Find in object (1) field (2). If founded, and it value is not function and not object and not null,
+     * that return it value, else return 'undefined'
      *
      * @param _oj {Object} --
-     * @param _stFieldPath {String} (2) -- [kmkx]; путь к свойству, например 'b.a' или 'b'
+     * @param _stFieldPath {String} (2) -- [kmkx]; path to property, example 'b.a' или 'b'
      * @returns {*}
      */
     fieldValueGet: function (_oj, _stFieldPath) {

@@ -48,9 +48,11 @@ module.exports = {
     },
 
     /**
-     * Отличает от А только тем что добавляет многоточие в конце если строка (1) была обрезана (т.е. если её длина
-     * больше чем (2)). Также отличается тем что преобразует (1) в строку с помощью util.inspect() перед тем как брать
-     * подстроку
+     * Differ from A only what adding to end ellipsis '...' if string (1) was cutted (i.e. if it length more than (2)).
+     * Also differ in, that converts (1) to string with util.inspect() before take substring
+     *
+     * @param _st {String} (1) --
+     * @param _iCount {Number} (2) --
      */
     substring_B: function (_st, _iCount) {
         let s = this.substring(util.inspect(_st), _iCount);

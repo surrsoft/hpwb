@@ -4,8 +4,8 @@
 
 /*
 
-ПОНЯТИЯ:
--- [[tknc]] - тип MongoClient возвращаемый фукнцией mongoClientGet()
+CONCEPTS:
+-- [[tknc]] - type 'MongoClient' returning of function 'mongoClientGet()'
 
  */
 
@@ -14,39 +14,39 @@ const { MongoClient, ObjectId } = require('mongodb');
 
 module.exports = {
   /**
-   * Подсоединяется к БД (2) MongoDB по адресу (1). Возвращает Promise<MongoClient> ([tknc])
+   * Connect to Db (2) MongoDB by adress (1). Return Promise<MongoClient> ([tknc])
    *
-   * @param _stMongoUrl {String} (1) -- например 'mongodb://localhost:27017/'
-   * @param _stDbName {String} (2) -- имя БД, например 'myNewDatabase'
-   * @return {Promise<MongoClient>} у значения тип MongoClient
+   * @param _stMongoUrl {String} (1) -- example 'mongodb://localhost:27017/'
+   * @param _stDbName {String} (2) -- db name, example 'myNewDatabase'
+   * @return {Promise<MongoClient>}
    */
   mongoClientGet: async function (_stMongoUrl, _stDbName) {
     return await MongoClient.connect(
       _stMongoUrl + _stDbName,
       { useNewUrlParser: true, useUnifiedTopology: true }
-    )
+    );
   },
 
   /**
-   * Отличается от А тем что в (1) не указывается имя БД.
-   * ДЛЯ СПРАВКИ: получение экземпляра БД делается так
+   * Differ from A that in (1) not specified db name.
+   * FOR REFERENCE: getting instance db maked by
    * <code> db = result-current-function.db(dbName) </code>
    *
-   * @param _stMongoUrl {String} (1) -- например 'mongodb://localhost:27017' (можно с '/' на конце)
+   * @param _stMongoUrl {String} (1) -- example 'mongodb://localhost:27017' (can be with '/' on end)
    * @return {Promise<MongoClient>}
    */
   mongoClientGet_B: async function (_stMongoUrl) {
     return await MongoClient.connect(
       _stMongoUrl,
       { useNewUrlParser: true, useUnifiedTopology: true }
-    )
+    );
   },
 
   /**
-   * Получение объекта БД
+   * Get db object
    *
-   * @param _stMongoUrl {String} (1) -- например 'mongodb://localhost:27017' (можно с '/' на конце)
-   * @param _stDbName {String} (2) -- имя БД, например 'test'
+   * @param _stMongoUrl {String} (1) -- example 'mongodb://localhost:27017' (can be with '/' on end)
+   * @param _stDbName {String} (2) -- db name, example 'test'
    * @return {Promise<Db>}
    */
   dbGet: async function (_stMongoUrl, _stDbName){
