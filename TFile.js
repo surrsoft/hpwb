@@ -1,16 +1,16 @@
-/*
-ОПИСАНИЕ: функции для работы с файлами и директориями
- */
-
 "use strict";
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
+
+/*
+DESCRIPTION: functions for work with files and directories
+ */
 
 //require
 //`````````````````````````````````````````````````````````````````````````````````````````````````
 const fs = require('fs');
 
 //`````````````````````````````````````````````````````````````````````````````````````````````````
-//--- [[ubtm]] - кодировки для использования в 'options' функций модуля 'fs'
+//--- [[ubtm]] - encodings fro use with 'options' of functions module 'fs'
 const UBTM_ASCII = 'ascii';
 const UBTM_UTF8 = 'utf8';
 const UBTM_UTF16LE = 'utf16le';
@@ -20,11 +20,11 @@ const UBTM_BINARY = 'binary';
 
 //`````````````````````````````````````````````````````````````````````````````````````````````````
 /**
- * {В РАЗРАБОТКЕ}
- * Получение содержимого файла (1) в виде строки из файла в кодировке UTF-8
+ * {IN WORK}
+ * Return content of file (1) as string from file enconding as UTF-8
  *
- * @param _stFileNameAbs (1) -- файл в кодировке UTF8
- * @returns {string} строка в кодировке UTF8
+ * @param _stFileNameAbs (1) -- file with enconding UTF8
+ * @returns {string} string encoding as UTF8
  */
 function readFileSync(_stFileNameAbs) {
     return fs.readFileSync(_stFileNameAbs, UBTM_UTF8);

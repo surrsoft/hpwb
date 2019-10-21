@@ -1,10 +1,13 @@
+"use strict";
+
+/* jshint esversion: 8 */
 
 const request = require('request');
 
 module.exports = {
 
   /**
-   * Просто пример запроса. Делает GET запрос на GitHub на страницу с лицензией, результат запроса пишет в консоль.
+   * Just example of request. Make GET request to GitHub on page with license, result write to console.
    */
   requestExampleSend: function () {
     request('https://api.github.com/repos/atom/atom/license', function (error, response, body) {
@@ -15,7 +18,7 @@ module.exports = {
   },
 
   /**
-   * От А отличается тем что возвращает Promise
+   * Differ from A that return Promise
    */
   requestExampleSend_B: async function () {
     return new Promise((resolve, reject) => {
@@ -33,7 +36,7 @@ module.exports = {
   },
 
   /**
-   * Отличается от А только тем что дополнительно включает в запрос заголовок 'User-Agent'
+   * Differ from A only that additionaly add to request header 'User-Agent'
    */
   requestExampleSend_C: function () {
     const options = {
@@ -53,9 +56,9 @@ module.exports = {
   },
 
   /**
-   * Делает GET запрос на URL (1). Результат не возвращает - пишет в консоль
+   * Make GET request to URL (1). No return result - writing to console
    *
-   * @param _stURL {String} (1) -- URL на который нужно сделать запрос
+   * @param _stURL {String} (1) -- URL to which you need to make a request
    */
   requestSend: function (_stURL) {
     request(_stURL, function (error, response, body) {

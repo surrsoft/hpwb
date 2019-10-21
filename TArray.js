@@ -1,17 +1,18 @@
-/*
-ОПИСАНИЕ: функции для работы с массивами
- */
 
 "use strict";
 
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
+
+/*
+DESCRIPTION: functions for work with arrays
+ */
 
 module.exports = {
 
     /**
-     * Возвращает TRUE если (1) это массив (Array), иначе возвращает FALSE
+     * Return TRUE if (1) is array (Array), else return FALSE
      *
-     * @param _arr {Array} (1) -- предположительно массив
+     * @param _arr {Array} (1) -- maybe array
      * @returns {boolean}
      */
     isArray: function (_arr) {
@@ -19,9 +20,9 @@ module.exports = {
     },
 
     /**
-     * Возвращает TRUE если (1) это массив и если он имеет длину > 0, иначе возвращает FALSE
+     * Return TRUE if (1) is array and it have length > 0, else return FALSE
      *
-     * @param _arr {Array} (1) -- предположительно массив
+     * @param _arr {Array} (1) -- maybe array
      * @returns {boolean}
      */
     isNotEmpty: function (_arr) {
@@ -29,9 +30,9 @@ module.exports = {
     },
 
     /**
-     * Возвращает TRUE если (1) не массив или если массив, но нулевой длины
+     * Return TRUE if (1) is not array OR if array but have 0 length
      *
-     * @param _arr {Array} (1) -- предположительно массив
+     * @param _arr {Array} (1) -- maybe array
      * @returns {boolean}
      */
     isEmpty: function (_arr) {
@@ -40,19 +41,17 @@ module.exports = {
 
 
     /**
-     * Отбирает из массива (1) элементы в количестве (2) и добавляет их в результирующий массив.
-     * Возвращает пустой массив в любом из следующих случаев:
-     * -- (1) это не массив
-     * -- (2) или (3) меньше 0
-     * -- (3) меньше чем (2)
-     * -- (3) равно (2)
-     * Если (3) больше чем длина массива (1) то на выходе будет копия массива (1)
+     * Selects from array (1) elems in count (2) and adding it to result array.
+     * Return empty array in any of the following cases:
+     * -- (1) it's not array
+     * -- (2) or (3) less 0
+     * -- (3) less than (2)
+     * -- (3) equals (2)
+     * If (3) more then length of array (1) that in result will copy of array (1).
      *
-     * @param _arrFrom {Array} (1) -- предположительно массив
-     * @param _iIndexBegin {number} (2) -- индекс начала отбора элементов (элемент располагающийся по этому индексу попадает
-     * в результирующий массив)
-     * @param _iIndexEnd {number} (3) -- индекс окончания отбора элементов (элемент располагающийся по этому индексу НЕ
-     * попадает в результирующий массив)
+     * @param _arrFrom {Array} (1) -- maybe array
+     * @param _iIndexBegin {number} (2) -- index of start selects elems (inclusively)
+     * @param _iIndexEnd {number} (3) -- index end of selects elems (exceptionally)
      */
     subArray: function (_arrFrom, _iIndexBegin, _iIndexEnd) {
         if (this.isArray(_arrFrom)) {
@@ -64,7 +63,7 @@ module.exports = {
     },
 
     /**
-     * Отличается от А только тем что (3) работает как "включительно"
+     * Differ from A only that (3) work as 'inclusively'
      *
      * @param _arrFrom {Array}
      * @param _iIndexBegin {number}

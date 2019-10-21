@@ -1,9 +1,9 @@
 "use strict";
 
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 
 /*
-ОПИСАНИЕ: утилитные функции для получения отладочной информации о различных сущностях
+DESCRIPTION: utility functions for get debug info about various entities
 
  */
 
@@ -13,7 +13,8 @@ const TString = require('./TString');
 
 //`````````````````````````````````````````````````````````````````````````````````````````````````
 /**
- * Если TRUE то при выводе показывается так же typeof объекта
+ * If TRUE than at time output showing alse 'typeof' of object
+ *
  * @type {boolean}
  */
 let mOptTypeof = false;
@@ -21,7 +22,8 @@ let mOptTypeof = false;
 module.exports = {
 
     /**
-     * Возвращает информацию об объекте (1) в удобочитаемом виде
+     * Return info about object (1) in easy-to-read form
+     *
      * @param _oj (1) --
      */
     info: function (_oj) {
@@ -30,10 +32,10 @@ module.exports = {
     },
 
     /**
-     * Помимо информации о самом объекте (1) отображает так же информацию о всех его прототипах
+     * In addition info about self object (1), showing alse info about all it prototypes
      *
      * @param _oj (1) --
-     * @returns {string} например { c: 4 } --> { a: 2 } --> {}
+     * @returns {string} example { c: 4 } --> { a: 2 } --> {}
      */
     info_B: function (_oj) {
         TUtil.argsCountVerifEx(arguments, 1);
@@ -53,7 +55,8 @@ module.exports = {
     },
 
     /**
-     * Выводит информацию об объекте (2) в консоль в удобочитаемом виде
+     * Write to console info about object (2) in easy-to-read form
+     *
      * @param _stPrefix (1) --
      * @param _oj (2) --
      * @param _stSuffix (3) --
@@ -64,7 +67,7 @@ module.exports = {
     },
 
     /**
-     * Выводит информацию об объекте (2) и всех его прототипах в консоль в удобочитаемом виде
+     * Write to console info about object (2), and about all it prototypes, in easy-to-read form
      *
      * @param _stPrefix (1) --
      * @param _oj (2) --
@@ -76,8 +79,8 @@ module.exports = {
     },
 
     /**
-     * Преобразует (2) используя util.inspect(), обрезает получившуюся строку до (4) символов и выводит в консоль
-     * предварив префиксом (1) и суффиксом (2)
+     * Convert (2) using util.inspect(), trim result string at (4) symbols and write to console along with prefix (1)
+     * and suffix (2)
      *
      * @param _stPrefix {String} (1) --
      * @param _oj {Object} (2) --
@@ -92,7 +95,8 @@ module.exports = {
     },
 
     /**
-     * Возвращает определение функции которая использовалась как конструктор для создания объекта (1)
+     * Return signature of function which used as constructor when creating object (1)
+     *
      * @param _oj (1) --
      * @returns {string}
      */
