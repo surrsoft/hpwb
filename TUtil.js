@@ -1,11 +1,12 @@
 "use strict";
 
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 
 module.exports = {
 
   /**
-   * Выбрасывает ошибку если количество аргументов в (1) не равно (2)
+   * Throw exception if count arguments (1) is not equals (2)
+   *
    * @param _arguments (1) --
    * @param _iCount (2) --
    */
@@ -23,7 +24,7 @@ module.exports = {
   },
 
   /**
-   * Бросает исключение с текстом (2) если (1) is FALSE
+   * Throw exception with text (2) if (1) is FALSE
    *
    * @param _b {Boolean} (1) --
    * @param _stText {String} (2) --

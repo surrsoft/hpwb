@@ -1,6 +1,6 @@
 "use strict";
 
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
 
 const lodash = require('lodash');
 const TUtil = require('./TUtil.js');
@@ -9,7 +9,7 @@ const util = require('util');
 module.exports = {
 
     /**
-     * Возвращает TRUE если строка (1) удовлетворяет регулярному выражению (2), иначе возвращает FALSE
+     * Return TRUE if string (1) is match regular expression (2), else return FALSE
      *
      * @param _st
      * @param _stRegExp
@@ -22,12 +22,12 @@ module.exports = {
     },
 
     /**
-     * Выделяет из строки (1) первые (2) символов.
-     * Если (2) больше чем длина (1) то возвращает (1).
-     * Если (1) это не строка или lodah.isEmpty то возвращает пустую строку.
+     * Pick from string (1) first (2) symbols.
+     * If (2) more than length of (1) then return (1).
+     * If (1) is not string, or lodash.isEmpty, then return empty string.
      *
-     * Исключение если:
-     * - переданы не все аргументы
+     * @error:
+     * - not all arguments passed
      * - (2) < 0
      *
      * @param _st {String}

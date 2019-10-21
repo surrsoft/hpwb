@@ -1,16 +1,18 @@
 "use strict";
 
-/* jshint esversion: 6 */
+/* jshint esversion: 8 */
+
+const crypto = require('crypto');
 
 module.exports = {
 
   /**
-   * Генерирует ID длиной 20 символов
+   * Generating ID length 20 symbols
    *
-   * @return {string} например 7c557365fcac653e7649
+   * @return {string} example '7c557365fcac653e7649'
    */
   idGenerate: function () {
-    return require('crypto').randomBytes(10).toString('hex');
+    return crypto.randomBytes(10).toString('hex');
   }
 
 };
