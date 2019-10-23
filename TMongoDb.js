@@ -14,14 +14,14 @@ const { MongoClient, ObjectId } = require('mongodb');
 
 module.exports = {
   /**
-   * Connect to Db (2) MongoDB by adress (1). Return Promise<MongoClient> ([tknc])
+   * Connect to Db (2) MongoDB by address (1). Return Promise<MongoClient> ([tknc])
    *
    * @param _stMongoUrl {String} (1) -- example 'mongodb://localhost:27017/'
    * @param _stDbName {String} (2) -- db name, example 'myNewDatabase'
    * @return {Promise<MongoClient>}
    */
   mongoClientGet: async function (_stMongoUrl, _stDbName) {
-    return await MongoClient.connect(
+    return MongoClient.connect(
       _stMongoUrl + _stDbName,
       { useNewUrlParser: true, useUnifiedTopology: true }
     );
@@ -36,7 +36,7 @@ module.exports = {
    * @return {Promise<MongoClient>}
    */
   mongoClientGet_B: async function (_stMongoUrl) {
-    return await MongoClient.connect(
+    return MongoClient.connect(
       _stMongoUrl,
       { useNewUrlParser: true, useUnifiedTopology: true }
     );
