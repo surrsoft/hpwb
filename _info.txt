@@ -9,3 +9,8 @@ Common JavaScript library
 
 CONCEPTS:
 -- [[kmkx]] - path to object field in form 'through the point', example 'a.b' or 'a'
+-- [[ateb]], _mongo-connect-string - mongo connection string. Строка подключения к отдельной БД в MongoDb.
+Например (вариант с MongoDb Atlas):
+'mongodb+srv://surradmin:${password}@clustersurr-ovoi0.azure.mongodb.net/${dbName}?retryWrites=true&w=majority'
+где вместо ${..} подставляются также значения.
+См. также https://docs.atlas.mongodb.com/driver-connection/#select-your-driver-and-version
