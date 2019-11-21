@@ -39,6 +39,8 @@ module.exports = {
   },
 
   /**
+   * Convert string (1) to Number.
+   * See test
    *
    * @param _stNumber {String}
    * @returns {number}
