@@ -13,6 +13,7 @@ const TString = require('./TString');
 const TUtil = require('./TUtil');
 const TypeID = require('./TypeID');
 const TInternet = require('./TInternet');
+const TUrl = require('./TUrl');
 
 module.exports = {
   TArray,
@@ -25,4 +26,5 @@ module.exports = {
   TUtil,
   TypeID,
   TInternet,
+  TUrl,
 };
