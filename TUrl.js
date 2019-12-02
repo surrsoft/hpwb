@@ -65,16 +65,23 @@ module.exports = {
    * @return {{}|*} example {skip: 1, onPage: 5}
    */
   queryGetC(_stUrl, _arrOjEkdo) {
-    const arrOjQueryElems = this.queryGet(_stUrl);
+    let ojQueryElems = this.queryGet(_stUrl);
+    // --- if field of ojQueryElems is Array, get it first elem as data
+    Object.keys(ojQueryElems).forEach(key => {
+      if (lodash.isArray(ojQueryElems[key]) && ojQueryElems[key].length > 0) {
+        ojQueryElems[key] = ojQueryElems[key][0];
+      }
+    });
+    // ---
     const arrStEkdoNames = _arrOjEkdo.map(ekdo => ekdo.name);
     const ojRet = {};
     // ---
-    const b51 = !lodash.isEmpty(arrOjQueryElems);
+    const b51 = !lodash.isEmpty(ojQueryElems);
     const b52 = !lodash.isEmpty(arrStEkdoNames);
     if (b51 && b52) {
-      const arrStQueryKeys = Object.keys(arrOjQueryElems);
+      const arrStQueryKeys = Object.keys(ojQueryElems);
       arrStQueryKeys.forEach((stQueryKey) => {
-        const stQueryElemValue = arrOjQueryElems[stQueryKey];
+        const stQueryElemValue = ojQueryElems[stQueryKey];
         const b53 = !(lodash.isEmpty(stQueryElemValue));
         const b54 = !(arrStEkdoNames.indexOf(stQueryKey) === -1);
         if (b53 && b54) {
@@ -83,9 +90,9 @@ module.exports = {
           let val;
           const fnTransform = lodash.get(ojEkdo, 'fnTransform');
           if (lodash.isFunction(fnTransform)) {
-            val = fnTransform(arrOjQueryElems[stQueryKey]);
+            val = fnTransform(ojQueryElems[stQueryKey]);
           } else {
-            val = arrOjQueryElems[stQueryKey];
+            val = ojQueryElems[stQueryKey];
           }
           // ---
           if (!lodash.isEmpty(stNewNameValue)) {
