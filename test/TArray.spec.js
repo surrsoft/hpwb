@@ -12,7 +12,7 @@ const TArray = require('../TArray');
 
 const arr = [1, 2, 3, 4, 5, 6, 7];
 
-describe('TUrl.queryGetC', () => {
+describe('TArray.subArray_C', () => {
   it('010', () => {
     const arr0 = TArray.subArray_C(arr, 2, 2);
     expect(arr0).eql([3, 4]);

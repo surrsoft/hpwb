@@ -1,4 +1,3 @@
-
 "use strict";
 
 /* jshint esversion: 6 */
@@ -15,6 +14,8 @@ const TypeID = require('./TypeID');
 const TInternet = require('./TInternet');
 const TUrl = require('./TUrl');
 
+const antd_TPagination = require('./antd/TPagination');
+
 module.exports = {
   TArray,
   TFile,
@@ -27,4 +28,7 @@ module.exports = {
   TypeID,
   TInternet,
   TUrl,
+  antd: {
+    TPagination: antd_TPagination,
+  }
 };
