@@ -8,8 +8,6 @@ START: 'npm run test'
 
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
-const lodash = require('lodash');
-const TUrl = require('../TUrl');
 const TArray = require('../TArray');
 
 const arr = [1, 2, 3, 4, 5, 6, 7];
