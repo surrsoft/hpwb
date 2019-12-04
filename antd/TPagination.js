@@ -3,8 +3,8 @@ const queryString = require('querystring');
 
 /*
 CONCEPTS:
-  -- [[xbgf]] - object in form { location: { search } } (where 'search' is _search)
-  -- [[zdvu]] - (type Array<String>) set of page sizes, example ['10', '20', '50']
+  -- [[xbgf]], _srcSearch - object in form '{ location: { search } }' (where 'search' is _search), example this.props
+  -- [[zdvu]], _pageSizes - (type Array<String>) set of page sizes, example ['10', '20', '50']
   -- _search - string '' or '?page=2' or '?onPage=20' or '?page=2&onPage=20'
   (where 2, 20 it is number for example). Transform to _skip and _take with
   function 'skipAndTakeGet'
