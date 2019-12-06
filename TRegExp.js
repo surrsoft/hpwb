@@ -1,5 +1,10 @@
 
-// IP in normal format and CIDR format.
+// IPv4.
+// Examples valid: 1.1.1.1 .
+// Examples invalid: 256.1.1.1 .
+module.exports.RG_IP = new RegExp('^(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))$', 'gi');
+
+// IPv4 in normal format and CIDR format.
 // Examples valid: 1.1.1.1, 1.1.1.1/1, 1.1.1.1/32 .
 // Examples invalid: 256.1.1.1, 1.1.1.1/, 1.1.1.1/33 .
 module.exports.RG_IP_CIDR = new RegExp('^(?:(?:2(?:[0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9])\\.){3}(?:(?:2([0-4][0-9]|5[0-5])|[0-1]?[0-9]?[0-9]))(?:\\/\\d{1,1}|\\/[1-2][0-9]|\\/[1-3][0-2]|)$', 'gi');
