@@ -1,6 +1,6 @@
 {
   "name": "xrsu",
-  "version": "1.10.1",
+  "version": "1.11.0",
   "description": "library JavaScript, common features",
   "main": "index.js",
   "scripts": {

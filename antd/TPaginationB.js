@@ -1,4 +1,3 @@
-
 /*
 STATUS: in progress
  */
@@ -7,6 +6,7 @@ const _ = require('lodash');
 const TUrl = require('../TUrl');
 
 /**
+ * {IN PROGRESS}
  *
  * @param oj {Object} (1) -- [xbgf]
  * @param pageName {String} (2) -- key of 'page' elem
