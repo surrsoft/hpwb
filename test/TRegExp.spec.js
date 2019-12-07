@@ -26,3 +26,15 @@ describe('TRegExp.PORT', () => {
   it('', () => expect(new RegExp(TRegExp.RG_PORT).test(undefined)).to.equal(false));
 });
 
+describe('TRegExp.PORTS', () => {
+  it('', () => expect(new RegExp(TRegExp.RG_PORTS).test('1')).to.equal(true));
+  it('', () => expect(new RegExp(TRegExp.RG_PORTS).test('1 1')).to.equal(true));
+  it('', () => expect(new RegExp(TRegExp.RG_PORTS).test('65535 65535')).to.equal(true));
+
+  it('', () => expect(new RegExp(TRegExp.RG_PORTS).test('65535 65536')).to.equal(false));
+  it('', () => expect(new RegExp(TRegExp.RG_PORTS).test('65535 65535 ')).to.equal(false));
+  it('', () => expect(new RegExp(TRegExp.RG_PORTS).test('0')).to.equal(false));
+  it('', () => expect(new RegExp(TRegExp.RG_PORTS).test(' ')).to.equal(false));
+  it('', () => expect(new RegExp(TRegExp.RG_PORTS).test('text text')).to.equal(false));
+});
+
