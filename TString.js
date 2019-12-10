@@ -49,13 +49,28 @@ module.exports = {
 
   /**
    * Differ from A only what adding to end ellipsis '...' if string (1) was cutted (i.e. if it length more than (2)).
-   * Also differ in, that converts (1) to string with util.inspect() before take substring
+   * Also differ in, that converts (1) to string with util.inspect() before take substring.
+   * ATTENTION: this prefered for debug, for string prefered C version
    *
    * @param _st {String} (1) --
    * @param _iCount {Number} (2) --
    */
   substring_B: function (_st, _iCount) {
     let s = this.substring(util.inspect(_st), _iCount);
+    if (_st.length > _iCount) {
+      s += '...';
+    }
+    return s;
+  },
+
+  /**
+   * Different from B that this preffered for String
+   *
+   * @param _st {String} (1) --
+   * @param _iCount {Number} (2) --
+   */
+  substring_C: function (_st, _iCount) {
+    let s = this.substring(_st, _iCount);
     if (_st.length > _iCount) {
       s += '...';
     }
