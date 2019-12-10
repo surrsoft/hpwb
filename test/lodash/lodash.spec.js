@@ -151,12 +151,6 @@ describe('lodash', () => {
 
         // pay attention on field 'a'
         const res = _.assignInWith(oj, new Foo(), (objValue, srcValue, key, object, source) => {
-          console.log('!!-!!-!! -> ------------- () {191209112643}'); //del
-          console.log('!!-!!-!! objValue {191209112417}\n', objValue); //del
-          console.log('!!-!!-!! srcValue {191209112421}\n', srcValue); //del
-          console.log('!!-!!-!! key {191209112425}\n', key); //del
-          console.log('!!-!!-!! object {191209112430}\n', object); //del
-          console.log('!!-!!-!! source {191209112434}\n', source); //del
           delete object.a;
         });
         expect(res).eql({ b: 3, d: 5 });
