@@ -14,6 +14,7 @@ const TypeID = require('./TypeID');
 const TInternet = require('./TInternet');
 const TUrl = require('./TUrl');
 const TRegExp = require('./TRegExp');
+const TTestData = require('./TTestData');
 
 const antd_TPagination = require('./antd/TPagination');
 
@@ -30,6 +31,7 @@ module.exports = {
   TInternet,
   TUrl,
   TRegExp,
+  TTestData,
   antd: {
     TPagination: antd_TPagination,
   }

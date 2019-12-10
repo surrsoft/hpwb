@@ -10,18 +10,20 @@ const TMap = require('./TMap');
 module.exports = {
 
   /**
+   * {DEPRECATED}
    * If (1) is function that return it _fun-prototype ([fyxu]), else just prototype
    *
+   * @deprecated
    * @param _any (1) --
    * @returns {any}
    */
   prototypeGet: function (_any) {
     if (_any === null) {
-      return null;
+      return _any;
     }
     //---
     if (_any === undefined) {
-      return undefined;
+      return _any;
     }
     //---
     if (typeof _any === 'function') {
@@ -29,6 +31,47 @@ module.exports = {
     }
     //---
     return Object.getPrototypeOf(_any);
+  },
+
+  prototypeGetB(_any) {
+    if (!(_any !== null && _any !== undefined)) {
+      return _any;
+    }
+    if (lodash.isFunction(_any)) {
+      return _any.prototype;
+    }
+    return Object.getPrototypeOf(_any);
+  },
+
+  /**
+   * Return list prototypes of (1)
+   *
+   * @param _any {*} (1) --
+   * @return {[]}
+   */
+  prototypesGet: function (_any) {
+    const ret = [];
+    let anyIn = this.prototypeGetB(_any);
+    while (anyIn || (anyIn === '') || (anyIn === 0)) {
+      ret.push(anyIn);
+      anyIn = this.prototypeGetB(anyIn);
+    }
+    return ret;
+  },
+
+  /**
+   * Different at A that (1) will be first elem of result.
+   *
+   * @param _any {*} (1) --
+   * @return {[*]}
+   */
+  prototypesGetB: function (_any) {
+    const p = this.prototypesGet(_any);
+    let ret = [_any];
+    if (p.length > 0) {
+      ret = ret.concat(p);
+    }
+    return ret;
   },
 
   /**

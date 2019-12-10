@@ -47,7 +47,7 @@ module.exports = {
     let stRet = this.fnInspect(_oj);
     let ojIn = Object.getPrototypeOf(_oj);
     while (ojIn) {
-      stRet += ' --> ' + this.fnInspect(ojIn);
+      stRet += ' --proto--> ' + this.fnInspect(ojIn);
       ojIn = Object.getPrototypeOf(ojIn);
     }
     //---
