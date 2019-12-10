@@ -16,12 +16,13 @@ function Foo() {
 function Bar() {
   this.a = 1;
 }
+
 Bar.n = 2;
 
 function Tax() {
 }
-Tax.prototype.a = 1;
 
+Tax.prototype.a = 1;
 
 
 describe('lodash', () => {
@@ -67,7 +68,6 @@ describe('lodash', () => {
   });
 
   describe('Object', () => {
-
 
     describe('_.assignIn', () => {
       it('010', () => {
@@ -157,6 +157,14 @@ describe('lodash', () => {
       });
     });
 
+  });
+
+  describe('String', () => {
+    describe('replace', () => {
+      it('one replace', () => expect(_.replace('aabbccddcctt', 'cc', '11')).to.equal('aabb11ddcctt'));
+      it('multi replace', () => expect(_.replace('aabbccddcctt', /cc/g, '11')).to.equal('aabb11dd11tt'));
+      it('010', () => expect(_.replace('aaaa', /aa/g, 'n')).to.equal('nn'));
+    });
   });
 
 
