@@ -10,10 +10,8 @@ const TMap = require('./TMap');
 module.exports = {
 
   /**
-   * {DEPRECATED}
    * If (1) is function that return it _fun-prototype ([fyxu]), else just prototype
    *
-   * @deprecated
    * @param _any (1) --
    * @returns {any}
    */
@@ -157,6 +155,7 @@ module.exports = {
     }
     return undefined;
   },
+
   /**
    * Return TRUE only if (1) is empty object '{}'
    *

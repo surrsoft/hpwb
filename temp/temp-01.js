@@ -1,12 +1,17 @@
 const TInfo = require('../TInfo');
 const TObject = require('../TObject');
 const lodash = require('lodash');
+const TTestData = require('../TTestData');
+const util = require('util');
 
 
-const oj = {a: 1};
+const fn = function () {
+  return '1';
+};
 
-const oj1 = Object.create(oj);
-oj1.b = 2;
 
-const ps = TObject.prototypesGetB(oj1);
-console.log('!!-!!-!! ps {191209225254}\n', ps); //del
+// const ps = TObject.prototypesGetB(fn);
+// console.log('!!-!!-!! ps {191209225254}\n', ps); //del
+
+
+TInfo.infoConsole('[', lodash, ']');
