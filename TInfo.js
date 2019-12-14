@@ -10,6 +10,7 @@ DESCRIPTION: utility functions for get debug info about various entities
 const util = require('util');
 const TUtil = require('./TUtil');
 const TString = require('./TString');
+const lodash = require('lodash');
 
 //`````````````````````````````````````````````````````````````````````````````````````````````````
 /**
@@ -22,7 +23,7 @@ let mOptTypeof = false;
 module.exports = {
 
   /**
-   * Return info about object (1) in easy-to-read form
+   * Return info about object (1) in easy-to-read form (uses util.inspect() inside)
    *
    * @param _oj (1) --
    */
@@ -52,6 +53,59 @@ module.exports = {
     }
     //---
     return stRet;
+  },
+
+  /**
+   * Maximum info about one object (1)
+   *
+   * @param _oj
+   */
+  info_C: function (_oj) {
+    const ret = {};
+    // ---
+    ret.typeof = typeof _oj;
+    // ---
+    if (_oj || _oj === '' || _oj === 0) {
+      // --- name
+      ret.name_ = _oj.name;
+      // --- own property names
+      const keys = Object.keys(_oj);
+      ret.fieldNamesOwn = keys;
+      // --- fields exists in protos only
+      ret.fieldNamesProtoOnly = [];
+      //const fieldOverridedNames = [];
+      let ct = 0;
+      let ctOverride = 0;
+      for (let key in _oj) {
+        if (ret.fieldNamesOwn.indexOf(key) === -1) {
+          ret.fieldNamesProtoOnly.push(key);
+          ctOverride++;
+        } else {
+          //fieldOverridedNames.push(key);
+        }
+        ct++;
+      }
+      // // --- names of overrided fields
+      // ret.fieldOverridedNames = fieldOverridedNames;
+      // --- count own properties
+      ret.fieldOwnCount = keys.length;
+      // --- count own and proto fields (except overriden fields)
+      ret.fieldOwnAndProtoCount = ct;
+      // --- count override properties
+      ret.fieldOverridedCount = ctOverride;
+      // --- TRUE if have field .prototype
+      ret.prototypeFieldIsHave = _oj.hasOwnProperty('prototype');
+      // --- содержимое поля '.prototype'
+      ret.prototypeFieldValue = _oj.prototype;
+      // --- content of field '[[Prototype]]'
+      ret.__prototype__FieldValue = Object.getPrototypeOf(_oj);
+      // --- constructor
+      ret.constructor_ = _oj.constructor;
+    }
+    // --- value
+    ret.value = util.inspect(_oj);
+    // ---
+    return ret;
   },
 
   /**
@@ -126,6 +180,14 @@ module.exports = {
       return util.inspect(retOj);
     }
     return 'is not function';
+  },
+
+  /**
+   * Info about current environment
+   * @return {Function}
+   */
+  environmentInfo() {
+    return new Function('return this')();
   }
 };
 
