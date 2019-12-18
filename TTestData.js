@@ -20,3 +20,17 @@ module.exports.data = [
   [{}],
   [{ a: 1 }],
 ];
+
+module.exports.dataB = {
+  a: 1,
+  b: 2,
+  c: {
+    d: 3,
+    e: {
+      f: 4
+    }
+  },
+  g: {
+    h: 5
+  }
+};

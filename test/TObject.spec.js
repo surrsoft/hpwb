@@ -25,6 +25,13 @@ describe('TObject ...', () => {
     it('function : false', () => expect(TObject.isEmptyObject(function () {
     })).to.equal(false));
     it('[] : false', () => expect(TObject.isEmptyObject([])).to.equal(false));
+    // ---
+    function Fn() {
+
+    }
+    const oj = new Fn();
+    it('', () => expect(TObject.isEmptyObject(oj)).to.equal(false));
+
   });
 
   describe('isNotEmptyObject', () => {

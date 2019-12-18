@@ -157,7 +157,8 @@ module.exports = {
   },
 
   /**
-   * Return TRUE only if (1) is empty object '{}'
+   * Return TRUE only if (1) is empty object '{}'.
+   * If (1) created by 'new' at functional object that returns FALSE.
    *
    * # have test
    *
@@ -173,6 +174,7 @@ module.exports = {
   },
   /**
    * Return TRUE if (1) is Object which have fields
+   * If (1) created by 'new' at functional object that returns FALSE.
    *
    * # have test
    *
@@ -198,7 +200,11 @@ module.exports = {
       return Object.keys(_oj).length;
     }
     return 0;
-  }
+  },
+
+  destruct: function (_oj) {
+    // TODO
+  },
 };
 
 
