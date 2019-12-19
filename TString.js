@@ -89,10 +89,57 @@ module.exports = {
       throw new Error(`type is not string; [${_st}]`);
     }
     const iN = _st.indexOf('\n');
-    if(iN === -1) {
+    if (iN === -1) {
       return _st;
     }
     return _st.substring(0, iN);
+  },
+
+  /**
+   * Get string from (1) which have max count occurrences in (1)
+   *
+   * @param arrSt {Array<String>} (1) -- example ['a', 'b', 'a']
+   * @return {*} example 'a'
+   */
+  maxOccurrenceStringGet: function (arrSt) {
+
+    function find(arr, st) {
+      let ret;
+      for (let i = 0; i < arr.length; i++) {
+        const elem = arr[i];
+        if (elem.val === st) {
+          ret = elem;
+          break;
+        }
+      }
+      return ret;
+    }
+
+    let ret;
+
+    if (arrSt && Array.isArray(arrSt)) {
+      const a = [];
+      arrSt.forEach(st => {
+        if (st) {
+          const b = find(a, st);
+          if (b) {
+            b.count++;
+          } else {
+            a.push({ val: st, count: 1 });
+          }
+        }
+      });
+
+      let c = 0;
+      a.forEach(elem => {
+        if (elem.count > c) {
+          c = elem.count;
+          ret = elem.val;
+        }
+      });
+    }
+
+    return ret;
   }
 
 };

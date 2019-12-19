@@ -42,4 +42,37 @@ describe('TString', () => {
     });
   });
 
+  describe('maxOccurrenceStringGet', () => {
+    it('', () => {
+      const a = ['a', 'b', 'a'];
+      const b = TString.maxOccurrenceStringGet(a);
+      expect(b).to.equal('a');
+    });
+    it('', () => {
+      const a = ['a', 'b'];
+      const b = TString.maxOccurrenceStringGet(a);
+      expect(b).to.equal('a');
+    });
+    it('', () => {
+      const a = ['a'];
+      const b = TString.maxOccurrenceStringGet(a);
+      expect(b).to.equal('a');
+    });
+    it('', () => {
+      const a = [];
+      const b = TString.maxOccurrenceStringGet(a);
+      expect(b).to.equal(undefined);
+    });
+    it('', () => {
+      const a = undefined;
+      const b = TString.maxOccurrenceStringGet(a);
+      expect(b).to.equal(undefined);
+    });
+    it('', () => {
+      const a = { a: 1 };
+      const b = TString.maxOccurrenceStringGet(a);
+      expect(b).to.equal(undefined);
+    });
+  });
+
 });
