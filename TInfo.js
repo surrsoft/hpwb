@@ -98,7 +98,7 @@ module.exports = {
       // --- содержимое поля '.prototype'
       ret.prototypeFieldValue = _oj.prototype;
       // --- content of field '[[Prototype]]'
-      ret.__prototype__FieldValue = Object.getPrototypeOf(_oj);
+      ret.__proto__FieldValue = Object.getPrototypeOf(_oj);
       // --- constructor
       ret.constructor_ = _oj.constructor;
     }
