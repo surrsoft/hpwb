@@ -15,6 +15,7 @@ const TInternet = require('./TInternet');
 const TUrl = require('./TUrl');
 const TRegExp = require('./TRegExp');
 const TTestData = require('./TTestData');
+const TDate = require('./TDate');
 
 const antd_TPagination = require('./antd/TPagination');
 
