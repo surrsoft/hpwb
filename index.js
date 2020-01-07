@@ -33,6 +33,7 @@ module.exports = {
   TUrl,
   TRegExp,
   TTestData,
+  TDate,
   antd: {
     TPagination: antd_TPagination,
   }
