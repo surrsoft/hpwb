@@ -90,4 +90,39 @@ describe('TString', () => {
     it('100', () => expect(TString.contains({ a: 'a' }, 'a')).to.equal(false));
   });
 
+  describe('trim', () => {
+    let st = '  aaB  bcc  ';
+    it('010', () => expect(TString.trim(st)).to.equal('aaB  bcc'));
+    it('012', () => expect(st).to.equal('  aaB  bcc  '));
+    // ---
+    it('020', () => expect(TString.trim('  aaB  bcc \n ')).to.equal('aaB  bcc'));
+    it('030', () => expect(TString.trim('  ')).to.equal(''));
+    it('040', () => expect(TString.trim('\n')).to.equal(''));
+    it('050', () => expect(TString.trim('')).to.equal(''));
+    it('060', () => expect(TString.trim({})).to.equal(''));
+    it('070', () => expect(TString.trim(undefined)).to.equal(''));
+  });
+
+  describe('spaceReplaceDoubles', () => {
+    it('010', () => expect(TString.spaceReplaceDoubles('  aaB  bcc  ')).to.equal(' aaB bcc '));
+    it('020', () => expect(TString.spaceReplaceDoubles('   ')).to.equal(' '));
+    it('040', () => expect(TString.spaceReplaceDoubles('\n')).to.equal(' '));      // (!)
+    it('045', () => expect(TString.spaceReplaceDoubles('a\nb')).to.equal('a b'));  // (!)
+    it('046', () => expect(TString.spaceReplaceDoubles(' \n')).to.equal(' '));     // (!)
+    it('050', () => expect(TString.spaceReplaceDoubles('')).to.equal(''));
+    it('060', () => expect(TString.spaceReplaceDoubles({})).to.equal(''));
+    it('070', () => expect(TString.spaceReplaceDoubles(undefined)).to.equal(''));
+  });
+
+  describe('smooth', () => {
+    it('010', () => expect(TString.smooth('  aaB  b  cc  ')).to.equal('aaB b cc'));
+    it('020', () => expect(TString.smooth('   ')).to.equal(''));
+    it('040', () => expect(TString.smooth('\n')).to.equal(''));      // (!)
+    it('045', () => expect(TString.smooth('a\nb')).to.equal('a b'));  // (!)
+    it('046', () => expect(TString.smooth(' \n')).to.equal(''));     // (!)
+    it('050', () => expect(TString.smooth('')).to.equal(''));
+    it('060', () => expect(TString.smooth({})).to.equal(''));
+    it('070', () => expect(TString.smooth(undefined)).to.equal(''));
+  });
+
 });

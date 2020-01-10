@@ -156,6 +156,54 @@ module.exports = {
       return st.includes(subst);
     }
     return false;
-  }
+  },
+
+  /**
+   * Delete start and ends whitespaces from (1). Return new string
+   *
+   * See test
+   *
+   * @param st {String} (1) --
+   * @return {string}
+   */
+  trim: function trim(st) {
+    if (typeof st === 'string' && st) {
+      return st.trim();
+    }
+    return '';
+  },
+
+  /**
+   * Replace all doubles whitespaces (whitespace, wrap string, etc.) to one whitespace.
+   * (1) is not changes
+   *
+   * See test
+   *
+   * @param st {String} (1) --
+   * @return {string}
+   */
+  spaceReplaceDoubles: function spaceReplaceDoubles(st) {
+    if (typeof st === 'string' && st) {
+      return st.replace(/\s+/g, ' ');
+    }
+    return '';
+  },
+
+  /**
+   * Trim start and end whitespaces, and replace doubles whithspeces to one.
+   * (1) is not changes
+   *
+   * See test
+   *
+   * @param st {String} (1) --
+   * @return {string|*|string}
+   */
+  smooth: function smooth(st) {
+    if (typeof st === 'string' && st) {
+      const st0 = this.trim(st);
+      return this.spaceReplaceDoubles(st0);
+    }
+    return '';
+  },
 
 };
