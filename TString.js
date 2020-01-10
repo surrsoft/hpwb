@@ -140,6 +140,22 @@ module.exports = {
     }
 
     return ret;
+  },
+
+  /**
+   * Return TRUE if (2) contains in (1). Sense to symbols register.
+   *
+   * See test
+   *
+   * @param st {String} (1) --
+   * @param subst {String} (2) --
+   * @return {boolean|*}
+   */
+  contains: function contains(st, subst) {
+    if (typeof st === 'string' && typeof subst === 'string' && st && subst) {
+      return st.includes(subst);
+    }
+    return false;
   }
 
 };

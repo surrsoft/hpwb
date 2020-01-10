@@ -75,4 +75,19 @@ describe('TString', () => {
     });
   });
 
+  describe('contains', () => {
+    it('010', () => expect(TString.contains('aaBbcc', 'a')).to.equal(true));
+    it('020', () => expect(TString.contains('aaBbcc', 'B')).to.equal(true));
+    it('030', () => expect(TString.contains('aaBbcc', 'A')).to.equal(false));
+    it('040', () => expect(TString.contains('aaBbcc', '')).to.equal(false));
+    it('050', () => expect(TString.contains('', 'A')).to.equal(false));
+    it('060', () => expect(TString.contains('', '')).to.equal(false));
+
+    it('070', () => expect(TString.contains(undefined, 'A')).to.equal(false));
+    it('080', () => expect(TString.contains('aaBbcc', undefined)).to.equal(false));
+    it('090', () => expect(TString.contains(undefined, undefined)).to.equal(false));
+
+    it('100', () => expect(TString.contains({ a: 'a' }, 'a')).to.equal(false));
+  });
+
 });
