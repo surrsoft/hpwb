@@ -207,7 +207,7 @@ module.exports = {
   },
 
   /**
-   * Convert object (1) to string representation
+   * Convert object (1) to string representation 1
    * @param oj
    * @return {string}
    */
