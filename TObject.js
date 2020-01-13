@@ -205,6 +205,15 @@ module.exports = {
   destruct: function (_oj) {
     // TODO
   },
+
+  /**
+   * Convert object (1) to string representation
+   * @param oj
+   * @return {string}
+   */
+  toString: function (oj) {
+    return JSON.stringify(oj);
+  }
 };
 
 
