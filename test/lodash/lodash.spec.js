@@ -212,6 +212,25 @@ describe('lodash', () => {
       });
     });
 
+    describe('_.get', () => {
+      it('010', () => {
+        const res = _.get({ a: 'f' }, 'a');
+        return expect(res).to.equal('f');
+      });
+      it('020', () => {
+        const res = _.get({ a: 'f', b: { c: 4 } }, 'b.c');
+        return expect(res).to.equal(4);
+      });
+      it('030 array in chain', () => {
+        const res = _.get({ a: 'f', b: [{c: 1}, {d: 2}] }, 'b.[1].d');
+        return expect(res).to.equal(2);
+      });
+      it('040 return undefined if path not exists', () => {
+        const res = _.get({ a: 'f', b: [{c: 1}, {d: 2}] }, 'b.[1].t');
+        return expect(res).to.equal(undefined);
+      });
+    });
+
   });
 
   describe('String', () => {
