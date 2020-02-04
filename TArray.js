@@ -85,6 +85,23 @@ module.exports = {
     return this.subArray(_arrFrom, _iSkip, _iSkip + _iTake);
   },
 
+  /**
+   * Find (first at left side) and delete elem (2) from (1).
+   * Case sesitive.
+   * Change source array (1).
+   *
+   * # see test
+   *
+   * @param arrBack (1) --
+   * @param elem (2) --
+   */
+  elemRemove: function (arrBack, elem) {
+    const ix = arrBack.indexOf(elem);
+    if (ix !== -1) {
+      arrBack.splice(ix, 1);
+    }
+  },
+
 };
 
 

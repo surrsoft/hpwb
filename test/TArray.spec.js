@@ -40,3 +40,30 @@ describe('TArray.subArray_C', () => {
 
 });
 
+describe('TArray.elemRemove', () => {
+  it('010', () => {
+    const arr = ['a', 'b', 'c', 'd'];
+    TArray.elemRemove(arr, 'b');
+    expect(arr).eql(['a', 'c', 'd']);
+  });
+  it('020', () => {
+    const arr = ['a', 'b', 'c', 'd'];
+    TArray.elemRemove(arr, 'B');
+    expect(arr).eql(['a', 'b', 'c', 'd']);
+  });
+  it('030', () => {
+    const arr = [];
+    TArray.elemRemove(arr, 'B');
+    expect(arr).eql([]);
+  });
+  it('040', () => {
+    const arr = ['a', 'b', 'c', 'd'];
+    TArray.elemRemove(arr, '');
+    expect(arr).eql(['a', 'b', 'c', 'd']);
+  });
+  it('050', () => {
+    const arr = ['a', 'b', 'b', 'c', 'd'];
+    TArray.elemRemove(arr, 'b');
+    expect(arr).eql(['a', 'b', 'c', 'd']);
+  });
+});
