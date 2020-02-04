@@ -190,7 +190,7 @@ module.exports = {
   },
 
   /**
-   * Trim start and end whitespaces, and replace doubles whithspeces to one.
+   * Trim start and end whitespaces, and replace doubles whithspaces to one.
    * (1) is not changes
    *
    * See test
@@ -205,5 +205,31 @@ module.exports = {
     }
     return '';
   },
+
+  COMPARE__NO_CHANGE: 'compare__no_change',
+  COMPARE__DELETE: 'compare__delete',
+  COMPARE__ADDED: 'compare__added',
+  COMPARE__CHANGED: 'compare__changed',
+
+  comparePrincipal: function comparePrincipal(st1, st2) {
+    const b1 = !!st1;
+    const b2 = !!st2;
+    // ---
+    if (b1 && !b2) {
+      return this.COMPARE__DELETE;
+    }
+    if (!b1 && b2) {
+      return this.COMPARE__ADDED;
+    }
+    if (!b1 && !b2) {
+      return this.COMPARE__NO_CHANGE;
+    }
+    if (b1 && b2 && st1 === st2) {
+      return this.COMPARE__NO_CHANGE;
+    }
+    if (b1 && b2 && st1 !== st2) {
+      return this.COMPARE__CHANGED;
+    }
+  }
 
 };

@@ -125,4 +125,13 @@ describe('TString', () => {
     it('070', () => expect(TString.smooth(undefined)).to.equal(''));
   });
 
+  describe('comparePrincipal', () => {
+    it('010', () => expect(TString.comparePrincipal('v', 'v')).to.equal(TString.COMPARE__NO_CHANGE));
+    it('010', () => expect(TString.comparePrincipal('v', 's')).to.equal(TString.COMPARE__CHANGED));
+    it('010', () => expect(TString.comparePrincipal('v', '')).to.equal(TString.COMPARE__DELETE));
+    it('010', () => expect(TString.comparePrincipal('', 'v')).to.equal(TString.COMPARE__ADDED));
+    it('010', () => expect(TString.comparePrincipal('', '')).to.equal(TString.COMPARE__NO_CHANGE));
+    it('010', () => expect(TString.comparePrincipal('')).to.equal(TString.COMPARE__NO_CHANGE));
+  });
+
 });
