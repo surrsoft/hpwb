@@ -230,6 +230,7 @@ module.exports = {
     if (b1 && b2 && st1 !== st2) {
       return this.COMPARE__CHANGED;
     }
+    return undefined;
   }
 
 };
