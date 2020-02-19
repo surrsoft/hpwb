@@ -28,6 +28,6 @@ module.exports = {
   },
 
   idAsObjectId(id){
-    return new mongoose.Types.ObjectId(id)
+    return new mongoose.Types.ObjectId(id);
   },
 };
