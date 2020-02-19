@@ -25,5 +25,9 @@ module.exports = {
    */
   schemaMethodAdd: function (_ojSchema, _stMethodName, _fn) {
     _ojSchema.methods[_stMethodName] = _fn;
-  }
+  },
+
+  isAsObjectId(id){
+    return new mongoose.Types.ObjectId(id)
+  },
 };
