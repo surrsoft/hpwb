@@ -52,6 +52,18 @@ module.exports = {
       return 0;
     }
     return lodash.toInteger(_stNumber);
+  },
+
+  /**
+   * Round up (1) to up
+   *
+   * see tests [200303115000]
+   *
+   * @param val {number} (1) --
+   * @return {number}
+   */
+  roundToUp(val){
+    return Math.ceil(val);
   }
 
 };
