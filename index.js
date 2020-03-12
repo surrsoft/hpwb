@@ -17,7 +17,7 @@ const TRegExp = require('./TRegExp');
 const TTestData = require('./TTestData');
 const TDate = require('./TDate');
 const TRandom = require('./TRandom');
-
+const TNodeConsts = require('./TNodeConsts');
 const antd_TPagination = require('./antd/TPagination');
 
 module.exports = {
@@ -36,6 +36,7 @@ module.exports = {
   TTestData,
   TDate,
   TRandom,
+  TNodeConsts,
   antd: {
     TPagination: antd_TPagination,
   }
