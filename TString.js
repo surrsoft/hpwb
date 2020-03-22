@@ -96,6 +96,22 @@ module.exports = {
   },
 
   /**
+   * Cut at string (1) first (2) symbols and return it cutten string
+   *
+   * see tests [200322163000]
+   *
+   * @param st {String} -- not changes, example 'abcd'
+   * @param startCt {Number} -- 0+, example 1
+   * @return {string|*}, at nonstandard situation return (1); example 'bcd'
+   */
+  cutStart(st, startCt) {
+    if (typeof st === 'string' && startCt >= 0) {
+      return st.slice(startCt);
+    }
+    return st;
+  },
+
+  /**
    * Get string from (1) which have max count occurrences in (1)
    *
    * @param arrSt {Array<String>} (1) -- example ['a', 'b', 'a']

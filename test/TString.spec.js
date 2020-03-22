@@ -75,6 +75,30 @@ describe('TString', () => {
     });
   });
 
+  // [[200322163000]]
+  describe('cutStart', () => {
+    it('010', () => {
+      const a = TString.cutStart('abcd', 0);
+      expect(a).to.equal('abcd')
+    });
+    it('020', () => {
+      const a = TString.cutStart('abcd', 1);
+      expect(a).to.equal('bcd')
+    });
+    it('030', () => {
+      const a = TString.cutStart('abcd', 10);
+      expect(a).to.equal('')
+    });
+    it('040', () => {
+      const a = TString.cutStart('abcd', -2);
+      expect(a).to.equal('abcd')
+    });
+    it('050', () => {
+      const a = TString.cutStart(undefined, 1);
+      expect(a).to.equal(undefined)
+    });
+  });
+
   describe('contains', () => {
     it('010', () => expect(TString.contains('aaBbcc', 'a')).to.equal(true));
     it('020', () => expect(TString.contains('aaBbcc', 'B')).to.equal(true));
