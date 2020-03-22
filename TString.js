@@ -98,7 +98,8 @@ module.exports = {
   /**
    * Cut at string (1) first (2) symbols and return it cutten string
    *
-   * see tests [200322163000]
+   * # see tests [200322163000]
+   * # id [[200322163701]]
    *
    * @param st {String} -- not changes, example 'abcd'
    * @param startCt {Number} -- 0+, example 1
