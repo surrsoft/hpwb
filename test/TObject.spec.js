@@ -8,6 +8,8 @@ START: 'npm run test'
 
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
+const { cloneDeep } = require('lodash');
+const util = require('util');
 const TObject = require('../TObject');
 
 describe('TObject ...', () => {
@@ -25,10 +27,12 @@ describe('TObject ...', () => {
     it('function : false', () => expect(TObject.isEmptyObject(function () {
     })).to.equal(false));
     it('[] : false', () => expect(TObject.isEmptyObject([])).to.equal(false));
+
     // ---
     function Fn() {
 
     }
+
     const oj = new Fn();
     it('', () => expect(TObject.isEmptyObject(oj)).to.equal(false));
 
@@ -64,6 +68,57 @@ describe('TObject ...', () => {
     it('function : 0', () => expect(TObject.fieldsOwnCount(function () {
     })).to.equal(0));
     it('[] : 0', () => expect(TObject.fieldsOwnCount([])).to.equal(0));
+  });
+
+  describe('fieldsRemove', () => {
+    it('010', () => {
+      const users = [
+        {
+          id: 1,
+          login: 'harry',
+          password: 'qwerty',
+          status: 'admin',
+          access: true,
+          subUser: {
+            _id: 38772,
+            x: 'p',
+            arr: [
+              { _id: "id1" },
+              { n: 2 }
+            ]
+          }
+        },
+        {
+          id: 2,
+          login: 'alice',
+          password: 'qwerty',
+          status: 'user'
+        }
+      ];
+      const users1 = [
+        {
+          login: 'harry',
+          password: 'qwerty',
+          status: 'admin',
+          access: true,
+          subUser: {
+            x: 'p',
+            arr: [
+              {},
+              { n: 2 }
+            ]
+          }
+        },
+        {
+          login: 'alice',
+          password: 'qwerty',
+          status: 'user'
+        }
+      ];
+      // ---
+      TObject.fieldsRemove(users, ['id', '_id']);
+      expect(users).eql(users1);
+    });
   });
 
 });
