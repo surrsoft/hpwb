@@ -213,6 +213,24 @@ module.exports = {
    */
   toString: function (oj) {
     return JSON.stringify(oj);
+  },
+
+  /**
+   * Remove from object (1) all fields (2).
+   * In process changing object (1), but returns clone of object (1).
+   *
+   * #ID xrsu [[200331153750]]
+   *
+   * @param oj (1) --
+   * @param fieldNames {Array<String>} (2) --
+   * @return {any}
+   */
+  fieldsRemove: function (oj, fieldNames) {
+    const st = JSON.stringify(oj, function (k, v) {
+      fieldNames.forEach(key => delete v[key]);
+      return v;
+    });
+    return JSON.parse(st);
   }
 };
 
