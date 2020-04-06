@@ -248,6 +248,34 @@ module.exports = {
       return this.COMPARE__CHANGED;
     }
     return undefined;
-  }
+  },
 
+  /**
+   * Replace in st (1) all substrings (2) at string (3)
+   *
+   * #ID xrsu [[200406083145]]
+   * #DEPENDENCIES: no
+   * #TEST [200406092206]
+   *
+   * @param st {String} (1) --
+   * @param findSt {String} (2) --
+   * @param replaceSt {String} (3) --
+   * @param all {Boolean} (4) -- {TRUE default} if TRUE that replaced all substrings, else only first
+   * @param ignoreCase {Boolean} (5) -- {FALSE default} if TRUE at find symbols case ignored
+   */
+  substringReplace(st, findSt, replaceSt, all = true, ignoreCase = false) {
+    if (st && st.length > 0 && findSt && findSt.length > 0) {
+      let flags = '';
+      if (all) {
+        flags += 'g';
+      }
+      if (ignoreCase) {
+        flags += 'i';
+      }
+      const re = new RegExp(findSt, flags);
+      // ---
+      return st.replace(re, replaceSt);
+    }
+    return st;
+  }
 };

@@ -158,4 +158,20 @@ describe('TString', () => {
     it('010', () => expect(TString.comparePrincipal('')).to.equal(TString.COMPARE__NO_CHANGE));
   });
 
+  // [[200406092206]]
+  describe('substringReplace', () => {
+    it('010 all, ignoreCase', () => {
+      const res = TString.substringReplace('aA bb aa cc', 'aa', 'eE', true, true);
+      expect(res).to.equal('eE bb eE cc');
+    });
+    it('020 not all, ignoreCase', () => {
+      const res = TString.substringReplace('aA bb aa cc', 'aa', 'eE', false, true);
+      expect(res).to.equal('eE bb aa cc');
+    });
+    it('030 not all, not ignoreCase', () => {
+      const res = TString.substringReplace('aA bb aa cc', 'aa', 'eE', false, false);
+      expect(res).to.equal('aA bb eE cc');
+    });
+  });
+
 });

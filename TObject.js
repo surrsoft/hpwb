@@ -219,13 +219,14 @@ module.exports = {
    * Remove from object (1) all fields (2).
    * In process changing object (1).
    *
-   * #ID xrsu [[200331153750]]
+   * #ID xrsu [[200331153750]] rev.1.0
+   * #TEST [200401095233]
    *
    * @param ojBack (1) --
    * @param fieldNames {Array<String>} (2) --
    * @return {any}
    */
-  fieldsRemove: function (ojBack, fieldNames) {
+  fieldsRemove(ojBack, fieldNames) {
     JSON.stringify(ojBack, function (k, v) {
       fieldNames.forEach(key => delete v[key]);
       return v;
@@ -235,7 +236,7 @@ module.exports = {
   /**
    * Difference at A what not changing (1), returns clone of (1)
    *
-   * #ID xrsu [[200331192049]]
+   * #ID xrsu [[200331192049]] rev.1.0
    * #DEPENDENCIES: lodash.cloneDeep()
    *
    * @param oj {Object} (1) --

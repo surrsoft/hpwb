@@ -70,6 +70,7 @@ describe('TObject ...', () => {
     it('[] : 0', () => expect(TObject.fieldsOwnCount([])).to.equal(0));
   });
 
+  // [[200401095233]]
   describe('fieldsRemove', () => {
     it('010', () => {
       const users = [
