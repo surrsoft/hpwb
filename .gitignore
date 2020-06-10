@@ -1,6 +1,4 @@
 node_modules/
-/package-lock.json
 .idea/
-
 !.idea/runConfigurations/Mocha_01.xml
 /temp
