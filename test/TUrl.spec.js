@@ -12,6 +12,13 @@ const lodash = require('lodash');
 const TUrl = require('../TUrl');
 const TObject = require('../TObject');
 
+describe('TUrl.parse', () => {
+  it('010', () => {
+    const url = 'http://ya.ru';
+    // TODO
+  });
+});
+
 describe('TUrl.queryGetC', () => {
   it('010 return {}', () => {
     const q = TUrl.queryGetC('', [{ name: 'page' }, { name: 'onPage' }]);

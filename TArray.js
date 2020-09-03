@@ -87,10 +87,11 @@ module.exports = {
 
   /**
    * Find (first at left side) and delete elem (2) from (1).
-   * Case sesitive.
+   * Case sensitive.
    * Change source array (1).
    *
    * # see test
+   * ID: 200819105740
    *
    * @param arrBack (1) --
    * @param elem (2) --

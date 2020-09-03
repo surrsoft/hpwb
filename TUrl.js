@@ -11,10 +11,11 @@ const lodash = require('lodash');
 
 module.exports = {
   /**
-   * Parse URL (1)
+   * Parse URL (1). Throw exception if (1) is not string
    *
+   * @see https://nodejs.org/api/url.html#url_url_parse_urlstring_parsequerystring_slashesdenotehost
    * @param _stUrl (1) -- URL, example 'https://console.cognitiveops.me/worksets?hhh=1&kkk=2&page=10#dddd'
-   * @return {*}
+   * @return undefined
    */
   parse(_stUrl) {
     Url.parse(_stUrl, true);
