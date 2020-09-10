@@ -23,6 +23,6 @@ module.exports.RG_URI_QUERY = '^(?:(?:(?:[A-Za-z0-9_.\\-~]+))|(?:(?:[A-Za-z0-9_.
 module.exports.RG_DOMAIN_NAME = new RegExp('([a-z0-9A-Z]\\.)*[a-z0-9-]+\\.([a-z0-9]{2,24})+(\\.co\\.([a-z0-9]{2,24})|\\.([a-z0-9]{2,24}))*', 'gi');
 
 // email
-module.exports.EMAIL = new RegExp(
+module.exports.RG_EMAIL = new RegExp(
   /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
 );

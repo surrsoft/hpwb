@@ -19,6 +19,7 @@ const TDate = require('./TDate');
 const TRandom = require('./TRandom');
 const TNodeConsts = require('./TNodeConsts');
 const antd_TPagination = require('./antd/TPagination');
+const TVerify = require('./TVerfify');
 
 module.exports = {
   TArray,
@@ -39,5 +40,6 @@ module.exports = {
   TNodeConsts,
   antd: {
     TPagination: antd_TPagination,
-  }
+  },
+  TVerify
 };

@@ -55,6 +55,22 @@ module.exports = {
   },
 
   /**
+   * Convert number-as-string to number.
+   * See test
+   * Dependencies: lodash
+   * Version 1 1.0; ID [xrsu] 200910182000
+   * @param stNumber {string | number} -- example '3.2', '3,2', 3.2, 3
+   * @return {number}
+   */
+  fromStringB: function (stNumber) {
+    if (stNumber && (typeof stNumber === 'string')) {
+      const stNumber0 = stNumber.replace(/,/, '.')
+      return lodash.toNumber(stNumber0) || 0;
+    }
+    return 0;
+  },
+
+  /**
    * Round up (1) to up
    *
    * see tests [200303115000]
@@ -62,8 +78,8 @@ module.exports = {
    * @param val {number} (1) --
    * @return {number}
    */
-  roundToUp(val){
+  roundToUp(val) {
     return Math.ceil(val);
-  }
+  },
 
 };
