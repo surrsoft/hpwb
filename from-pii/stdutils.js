@@ -188,6 +188,12 @@ export function stdArrShuffle(arr) {
   return arr;
 }
 
+/**
+ * ID xrsu-[[210312213700]], rev.1 1.0 2021-03-12
+ *
+ * @param msec
+ * @return {Promise<unknown>}
+ */
 export async function stdSleep(msec) {
   return new Promise(resolve => setTimeout(resolve, msec))
 }
