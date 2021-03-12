@@ -2,7 +2,7 @@ import { random, toNumber } from 'lodash';
 
 /**
  * [afzk]-pagination
- * Version 1 1.0 2020-09-18; ID [xrsu] 200918101100
+ * Version 2 1.0.1 2021-03-12; ID [xrsu] 200918101100
  * @type {AfzkPagination}
  */
 export class AfzkPagination {
@@ -12,6 +12,7 @@ export class AfzkPagination {
 
   constructor(pageCountAll, diapLeftRight, minTreshold = 10, ostLeft = 1, ostRight = 1) {
     this.pageCountAll = pageCountAll;
+    // сколько будет элементов слева и справа от указанной в get() страницы
     this.diapLeftRight = diapLeftRight;
     // если this.pageCountAll <= этого порога то "..." не будет
     this.minTreshold = minTreshold;
