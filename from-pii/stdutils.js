@@ -2,6 +2,9 @@ import { random, toNumber } from 'lodash';
 
 /**
  * [afzk]-pagination
+ *
+ * see https://www.notion.so/surr/afzk-pagination-6fd5b52da6894663ae937728fd9d8d17
+ *
  * Version 2 1.0.1 2021-03-12; ID [xrsu] 200918101100
  * @type {AfzkPagination}
  */
